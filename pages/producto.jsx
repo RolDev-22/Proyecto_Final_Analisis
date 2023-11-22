@@ -26,17 +26,17 @@ export default function Producto() {
                         PRODUCTO
                     </Link>
 
-                    <Link href={"/"} className={styles.buttonCentro}>
+                    <Link href={"/modificar"} className={styles.buttonCentro}>
                         MODIFICAR <br />
                         PRODUCTO
                     </Link>
 
-                    <Link href={"/"} className={styles.buttonCentro}>
+                    <Link href={"/buscar"} className={styles.buttonCentro}>
                         BUSCAR <br />
                         PRODUCTO
                     </Link>
 
-                    <Link href={"/"} className={styles.buttonCentro}>
+                    <Link href={"/eliminar"} className={styles.buttonCentro}>
                         ELIMINAR <br />
                         PRODUCTO
                     </Link>
