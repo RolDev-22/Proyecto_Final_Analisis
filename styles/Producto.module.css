@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&family=Tillana&display=swap');
+
+/*
+font-family: 'Almendra SC', serif;
+font-family: 'Tillana', cursive;
+*/
+
+.body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.izquierdo {
+    display: flex;
+    background-color: #C5E0DC;
+    height: 100%;
+    width: 25%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.arriba {
+    display: flex;
+    width: 95%;
+    height: 15%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Buser {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+    background-color: #774F38;
+    cursor: pointer;
+    background-image: url('/img/usuario.png');
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 95%;
+}
+
+.Bhome {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+    background-color: #774F38;
+    background-image: url('/img/home.png');
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    cursor: pointer;
+}
+
+.Icentro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    width: 100%;
+    height: 70%;
+}
+
+.buttonCentro {
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+    position: relative;
+    background-color: #774F38;
+    font-family: 'Tillana', cursive;
+    font-size: 35px;
+    color: #F1D4AF;
+    width: 100%;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 15px;
+}
+
+.Iabajo {
+    display: flex;
+    width: 95%;
+    height: 15%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Bvolver {
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: transparent;
+    background-image: url('/img/volver.png');
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+/*CONTAINER ABAJO*/
+/*DIV IZQUIERDO*/
+
+/*DIV DERECHO*/
+.derecho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E08E79;
+    height: 100%;
+    width: 75%;
+}
+
+.Dfecha {
+    display: flex;
+    width: 95%;
+    height: 10%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #ECE5CE;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Tillana', cursive;
+    letter-spacing: 5px;
+}
+
+.Dtitulo {
+    display: flex;
+    width: 95%;
+    height: 60%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Tillana', cursive;
+    font-weight: bolder;
+    font-size: 90px;
+    letter-spacing: 15px;
+    color: #ECE5CE;
+}
+
+.Dlogo {
+    display: flex;
+    width: 95%;
+    height: 30%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imageProd {
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/productos.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+}
+
+/*DIV DERECHO*/

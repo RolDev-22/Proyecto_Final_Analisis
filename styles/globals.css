@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&family=Tillana&display=swap');
+
+/*
+font-family: 'Almendra SC', serif;
+font-family: 'Tillana', cursive;
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Tillana', cursive;
+}

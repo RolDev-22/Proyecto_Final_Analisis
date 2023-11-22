@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&family=Tillana&display=swap');
+
+/*
+font-family: 'Almendra SC', serif;
+font-family: 'Tillana', cursive;
+*/
+
+.Fbody {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #C5E0DC;
+    font-family: 'Tillana', cursive;
+    font-size: 30px;
+    color: #774F38;
+    font-weight: bolder;
+    letter-spacing: 10px;
+}
+
+.logo {
+    width: 30%;
+    height: 200px;
+    display: flex;
+    background-image: url('/img/logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+    transform: translateY(-30px);
+}
+
+.FormLog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECE5CE;
+    width: 30%;
+    height: 70%;
+    border: 1px solid #ECE5CE;
+    border-radius: 20px;
+    transform: translateY(-50px);
+}
+
+.FormBody {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    width: 90%;
+    height: 95%;
+}
+
+.Ftexttos {
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Tillana', cursive;
+    color: #774F38;
+    letter-spacing: 5px;
+    font-weight: 900;
+}
+
+.divIcon {
+    position: relative;
+    height: 100%;
+}
+
+.icon1 {
+    margin-top: 15px;
+    position: absolute;
+    pointer-events: none;
+    width: 50px;
+    height: 50px;
+    background-image: url('/img/userform.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 10px;
+}
+
+.icon2 {
+    margin-top: 15px;
+    position: absolute;
+    pointer-events: none;
+    width: 50px;
+    height: 50px;
+    background-image: url('/img/password.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 10px;
+}
+
+.Fuser {
+    width: 80%;
+    height: 50%;
+    background-color: #E08E79;
+    outline: none;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    padding-left: 60px;
+    caret-color: aqua;
+    color: white;
+}
+
+.Fpassword {
+    width: 80%;
+    height: 50%;
+    background-color: #E08E79;
+    outline: none;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    padding-left: 60px;
+    caret-color: aqua;
+    color: white;
+
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+.Fsubmir {
+    width: 50%;
+    height: 80%;
+    background-color: #C5E0DC;
+    border-radius: 50px;
+    font-size: 30px;
+    font-family: 'Tillana', cursive;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    color: #774F38;
+    border: solid 1px #774F38;
+    box-shadow: 1px 5px 2px 1px #774F38;
+    transition: all 0.5s ease;
+}
+
+.Fsubmir:hover {
+    transform: scale(1.1);
+}
+
+.Valid{
+    padding-left: 20px;
+    font-size: 15px;
+    color: green;
+}
+
+.Invalid{
+    padding-left: 20px;
+    font-size: 15px;
+    color: red;
+}
