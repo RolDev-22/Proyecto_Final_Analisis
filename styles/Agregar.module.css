@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Almendra+SC&family=Tillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 /*
 font-family: 'Almendra SC', serif;
 font-family: 'Tillana', cursive;
+*/
+
+/*
+font-family: 'Open Sans', sans-serif;
 */
 
 .bodyAg{
@@ -143,6 +148,7 @@ font-family: 'Tillana', cursive;
    outline: none;
    text-align: center;
    font-size: 30px;
+   font-family: 'Open Sans', sans-serif;
 }
 
 .selcts{
@@ -153,7 +159,16 @@ font-family: 'Tillana', cursive;
     border-radius: 30px;
     outline: none;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
+    padding-left: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.selcts option{
+    background-color: #F1D4AF;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
 }
 
 .date{
