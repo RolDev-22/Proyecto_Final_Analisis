@@ -6,6 +6,5 @@ const router = useRouter();
 
   return (
           <Component {...pageProps} router={router}/>
-
   )
 }

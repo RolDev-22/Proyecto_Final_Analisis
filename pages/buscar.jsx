@@ -32,6 +32,48 @@ export default function Buscar() {
 
                 </Link>
             </section>
-        </div>
+
+
+            <section className={styles.Binferior}>
+
+                <form className={styles.formMu}>
+
+                    <section className={styles.formArriba}>
+
+                        <div className={styles.searchCont}>
+                            <input className={styles.search} type="search" placeholder="Ingresé el ID ó Nombre" />
+                            <input type="button" value="" className={styles.butSearch} />
+                        </div>
+
+                        <div className={styles.container1}>
+                            <input type="checkbox" id="miCheckbox" className={styles.check} />
+                            <label for="miCheckbox"></label>
+                            <p className={styles.listGen}>Listado General</p>
+                        </div>
+
+                        <div className={styles.container2}>
+                            <p className={styles.filtText}>Filtro por Categoría</p>
+                            <select className={styles.selectCat}>
+                                <option value="">Seleccionar</option>
+                                <option value="opcion1">Categoria 1</option>
+                                <option value="opcion2">Categoria 2</option>
+                                <option value="opcion3">Categoria 3</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <section className={styles.formMedio}>
+                        <h1 className={styles.results}>Resultados de búsqueda</h1>
+                    </section>
+
+                    <section className={styles.formBajo}>
+                        <button className={styles.boton}>Enviar</button>
+                    </section>
+
+                </form>
+            </section>
+
+
+        </div >
     )
 }

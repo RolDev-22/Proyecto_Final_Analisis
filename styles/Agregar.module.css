@@ -86,9 +86,6 @@ font-family: 'Tillana', cursive;
     cursor: pointer;
 }
 
-
-
-
 .Binferior{
     display: flex;
     flex-direction: column;
@@ -216,5 +213,4 @@ font-family: 'Tillana', cursive;
 
 .sibmit:hover{
     transform: scale(1.1);
-
 }
