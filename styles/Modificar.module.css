@@ -85,3 +85,129 @@ font-family: 'Tillana', cursive;
     background-size: 85%;
     cursor: pointer;
 }
+
+
+
+.Binferior {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 70%;
+    background-color: #ECE5CE;
+    border-radius: 30px;
+    background-color: #ECE5CE;
+}
+
+.formMu {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 95%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.formArriba {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchCont {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.search {
+    height: 60px;
+    border: none;
+    border-radius: 25px;
+    width: 30%;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #E08E79;
+    font-size: 30px;
+    color: #C5E0DC;
+    outline: none;
+}
+
+.search::placeholder{
+    color: #C5E0DC;
+}
+
+.butSearch {
+    width: 60px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px 25px 25px 0px;
+    position: absolute;
+    background-image: url('/img/search.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-color: #F1D4AF;
+    margin-left: 340px;
+    transition: all .1s ease-in-out;
+}
+
+.butSearch:hover{
+    background-size: 65%;
+}
+
+.formMedio {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+.results {
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'Tillana', cursive;
+    letter-spacing: 5px;
+    color: #774F38;
+}
+
+.formBajo {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    background-color: #C5E0DC;
+    height: 50px;
+    width: 15%;
+    border: solid 1px #774F38;
+    border-radius: 30px;
+    outline: none;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Tillana', cursive;
+    color: #774F38;
+    box-shadow: 0px 3px 0px 1px #774F38;
+    transition: all .5s ease-in-out;
+}
+
+.boton:hover {
+    transform: scale(1.1);
+}

@@ -1,43 +1,48 @@
 import styles from "@/styles/Index.module.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { userDate } from "@/Components/Utils/Usuarios";
 
 export default function FormLog() {
 
+    /**Declaramos las diversas constantes que se pretenden usar */
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('')
-    const [validUser, setvalidUser] = useState(false);
+    const [validUser, setValidUser] = useState(false);
     const [validPassword, setValidPassword] = useState(false);
     const router = useRouter();
+    const [status, setStatus] = useState(false);
 
-    const handleUserChance = (event) => {
-        const { value } = event.target;
-        setUser(value);
-
-        if (value === 'Rolando' || value === 'Kevin' || value === 'Are') {
-            setvalidUser(true);
-        } else {
-            setvalidUser(false);
-        }
+    /**Extracción del valor que se ingresa en campo para usuairio del login */
+    const handleUserChange = (e) => {
+        const { value } = e.target;
+        setUser(value); /** seteo del valor que se brindó en el campo suario a su variable correspondiente*/
     }
 
-    const handlePasswordChance = (event) => {
-        const {value} = event.target;
-        setPassword(value);
-
-        if(value === '1234') {
-            setValidPassword(true);
-        }else{
-            setValidPassword(false);
-        }
-
+    /**Extracción del valor que se ingresa en campo para contraseña del login */
+    const handlePasswordChange = (e) => {
+        const { value } = e.target;
+        setPassword(value);/** seteo del valor que se brindó en el campo de contraseña a su variable correspondiente*/
     }
 
-    const handleSubmit = (event) => {
+    useEffect(() => { /***Efecto de estado para la validación de usuario y contraseña en el archivo de la base */
+        const checkUser = async () => {
+            const dataFound = await userDate(user, password); /**Constante que almacena la respuesta de la función de comprobaciones de la base de datos*/
+            setValidUser(dataFound.userValid); /**Seteo de validación del usuario según la base */
+            setValidPassword(dataFound.passwordValid); /**Seteo de validación de la contraseña según la base */
+        };
+        checkUser();
+    }, [user, password]);
+
+    const handleSubmit = async (event) => { /**Función asincronica para cuando se envía el form */
         event.preventDefault();
-        if(validUser && validPassword) {
+
+        if ((validUser && validPassword)) {/**Si los estados de estas variables son true */
+            setStatus(true);
+            localStorage.setItem('status', status);
+            console.log(status);
             router.push('/main');
-        }else{
+        } else {
             alert("Usuario o contraseña erronea");
         }
     }
@@ -63,7 +68,7 @@ export default function FormLog() {
                             name="user"
                             required="true"
                             value={user}
-                            onChange={handleUserChance}
+                            onChange={handleUserChange}
                         />
                         {
                             user.length > 0 && (
@@ -87,7 +92,7 @@ export default function FormLog() {
                             name="password"
                             required="true"
                             value={password}
-                            onChange={handlePasswordChance}
+                            onChange={handlePasswordChange}
                         />
                         {
                             password.length > 0 && (
@@ -111,4 +116,5 @@ export default function FormLog() {
             </form>
         </div>
     )
+
 }

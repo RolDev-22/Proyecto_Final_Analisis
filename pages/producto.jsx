@@ -1,6 +1,6 @@
 import React from "react";
 import styles from '@/styles/Producto.module.css';
-import Fecha from '@/Components/Fecha';
+import Fecha from '@/Components/Utils/Fecha';
 import Link from 'next/link';
 
 export default function Producto() {

@@ -1,25 +1,25 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import FormLog from '../pages/index'
+import { Router, Route, Routes } from 'react-router-dom';
+import FormLog from '../pages'
 import Main from '../pages/main';
 import Producto from '../pages/producto';
 import Agregar from '../pages/agregar';
 import Modificar from '../pages/modificar';
-import Buscar from '../pages/buscar';
 import Eliminar from '../pages/eliminar';
-
+import Buscar from '../pages/buscar';
 
 const Routes = () => {
   return (
     <Router>
-      <Switch>
+      <Routes>
         <Route exact path="/" component={FormLog} />
-        <Route path="/main" component={Main} />
-        <Route path="/producto" component={Producto} />
-        <Route path="/agregar" component={Agregar} />
-        <Route path="/modificar" component={Modificar} />
-        <Route path="/buscar" component={Buscar} />
-        <Route path="/eliminar" component={Eliminar} />
-      </Switch>
+          <Route path="/Main" component={Main} />
+          <Route path="/producto" component={Producto} />
+          <Route path="/agregar" component={Agregar} />
+          <Route path="/modificar" component={Modificar} />
+          <Route path="/buscar" component={Buscar} />
+          <Route path="/eliminar" component={Eliminar} />
+        <Route component={() => <Redirect to="/" />} />
+      </Routes>
     </Router>
   );
 };

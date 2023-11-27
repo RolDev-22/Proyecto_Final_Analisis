@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Buscar.module.css';
-import Fecha from "@/Components/Fecha";
-import Hora from "@/Components/Hora";
+import Fecha from "@/Components/Utils/Fecha";
+import Hora from "@/Components/Utils/Hora";
 
 export default function Buscar() {
 

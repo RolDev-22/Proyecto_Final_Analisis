@@ -1,5 +1,5 @@
 import { getDocs, collection } from 'firebase/firestore';
-import { db } from '../firebase/ConectFirebase';
+import { db } from '../../firebase/ConectFirebase';
 
 async function datosCategoria() {
   const querySnapshot = await getDocs(collection(db, 'categorias'));
@@ -9,7 +9,6 @@ async function datosCategoria() {
   }));
   return datos;
 }
-
 
 async function datosProveedor() {
   const querySnapshot = await getDocs(collection(db, 'provedor'));

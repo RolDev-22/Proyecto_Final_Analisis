@@ -10,7 +10,7 @@ font-family: 'Tillana', cursive;
 font-family: 'Open Sans', sans-serif;
 */
 
-.bodyAg{
+.bodyAg {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -20,7 +20,7 @@ font-family: 'Open Sans', sans-serif;
     row-gap: 10px;
 }
 
-.Bsuperior{
+.Bsuperior {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -46,7 +46,7 @@ font-family: 'Open Sans', sans-serif;
     cursor: pointer;
 }
 
-.Btitulo{
+.Btitulo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,20 +57,20 @@ font-family: 'Open Sans', sans-serif;
     color: #ECE5CE;
 }
 
-.Title{
+.Title {
     font-weight: bolder;
     font-size: 35px;
     letter-spacing: 5px;
 }
 
-.Fecha{
+.Fecha {
     font-weight: bolder;
     font-size: 25px;
     letter-spacing: 5px;
     color: #C5E0DC;
 }
 
-.Hora{
+.Hora {
     font-weight: bolder;
     font-size: 25px;
     letter-spacing: 5px;
@@ -91,7 +91,7 @@ font-family: 'Open Sans', sans-serif;
     cursor: pointer;
 }
 
-.Binferior{
+.Binferior {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,7 +102,7 @@ font-family: 'Open Sans', sans-serif;
     border-radius: 30px;
 }
 
-.NewProd{
+.NewProd {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,7 +115,7 @@ font-family: 'Open Sans', sans-serif;
     padding: 5px;
 }
 
-.divContainer{
+.divContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,7 +124,7 @@ font-family: 'Open Sans', sans-serif;
     height: 95%;
 }
 
-.divContainer4{
+.divContainer4 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -133,25 +133,39 @@ font-family: 'Open Sans', sans-serif;
     height: 95%;
 }
 
-.labels{
+.labels {
     font-size: 40px;
     font-family: 'Tillana', cursive;
     color: #774F38;
 }
 
-.textos{
-   background-color: #E08E79;
-   height: 50px;
-   width: 70%;
-   border: solid 1px white;
-   border-radius: 30px;
-   outline: none;
-   text-align: center;
-   font-size: 30px;
-   font-family: 'Open Sans', sans-serif;
+.textos {
+    background-color: #E08E79;
+    height: 50px;
+    width: 70%;
+    border: solid 1px white;
+    border-radius: 30px;
+    outline: none;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
 }
 
-.selcts{
+.number {
+    background-color: #E08E79;
+    height: 50px;
+    width: 60%;
+    border: solid 1px white;
+    border-radius: 30px;
+    outline: none;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.selcts {
     background-color: #E08E79;
     height: 50px;
     width: 70%;
@@ -162,16 +176,18 @@ font-family: 'Open Sans', sans-serif;
     font-size: 25px;
     padding-left: 20px;
     font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    padding-right: 10px;
 }
 
-.selcts option{
+.selcts option {
     background-color: #F1D4AF;
     text-align: left;
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
 }
 
-.date{
+.date {
     background-color: #E08E79;
     height: 50px;
     width: 70%;
@@ -182,7 +198,7 @@ font-family: 'Open Sans', sans-serif;
     font-size: 30px;
 }
 
-.butSubmit{
+.butSubmit {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -190,7 +206,7 @@ font-family: 'Open Sans', sans-serif;
     width: 100%;
 }
 
-.containerForm{
+.containerForm {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -200,17 +216,24 @@ font-family: 'Open Sans', sans-serif;
     column-gap: 100px;
 }
 
-.containerForm3{
+.containerForm3 {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 50%;
+    height: 100%;
     justify-content: space-between;
     align-items: center;
     column-gap: 100px;
 }
 
-.sibmit{
+.mensError{
+    color: red;
+    font-family: 'Tillana', cursive;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.sibmit {
     background-color: #C5E0DC;
     height: 50px;
     width: 30%;
@@ -226,6 +249,6 @@ font-family: 'Open Sans', sans-serif;
     transition: all .5s ease-in-out;
 }
 
-.sibmit:hover{
+.sibmit:hover {
     transform: scale(1.1);
 }
