@@ -1,7 +1,8 @@
-import { firestore } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '@/firebase/ConectFirebase';
 import { useState } from 'react';
 
-async function AgregarProducto({ dataObject }) {
+export default async function AgregarProducto ({dataObject}) {
 
     const [infProducto, setInfProducto] = useState({
         id_Producto: dataObject.id_Producto,
@@ -15,12 +16,10 @@ async function AgregarProducto({ dataObject }) {
     });
 
     try {
-        const productosRef = collection(db, 'Productos');
+        const productosRef = await collection(db, 'Productos');
         const docRef = await addDoc(productosRef, infProducto);
         console.log('Producto añadido con ID: ', docRef.id);
     } catch (error) {
         console.error('Error al agregar el producto: ', error);
     }
 }
-
-export { AgregarProducto };

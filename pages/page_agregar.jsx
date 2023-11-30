@@ -33,10 +33,10 @@ export default function Agregar() {
         fetchData();
     }, []);
 
-    const [datos, setDatos] = useState({
+    const [data, setData] = useState({
         id_Producto: '',
         nombre_Producto: '',
-        opcion_Categoria: '',
+        opcion_Categoria:'',
         opcion_Unidad: '',
         opcion_Proveedor: '',
         fecha_Vencimiento: '',
@@ -47,7 +47,7 @@ export default function Agregar() {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         console.log(name, value);
-        setDatos((prevProps) => ({
+        setData((prevProps) => ({
             ...prevProps,
             [name]: value
         }));
@@ -57,7 +57,8 @@ export default function Agregar() {
         event.preventDefault();
 
         try{
-            await AgregarProducto(datos);
+            console.log(data);
+            await AgregarProducto(data);
         }catch(error){
             console.error('Error al agregar el producto: ', error);
         }
@@ -124,7 +125,7 @@ export default function Agregar() {
                                 placeholder='PD001'
                                 maxLength={5}
                                 onChange={handleInputChange}
-                                value={datos.id_Producto}
+                                value={data.id_Producto}
                                 required
                             />
                         </div>
@@ -140,7 +141,7 @@ export default function Agregar() {
                                 className={styles.textos}
                                 name="nombre_Producto"
                                 onChange={handleInputChange}
-                                value={datos.nombre_Producto}
+                                value={data.nombre_Producto}
                                 required
                             />
                         </div>
@@ -154,7 +155,7 @@ export default function Agregar() {
                                 className={styles.selcts}
                                 name="opcion_Categoria"
                                 onChange={handleInputChange}
-                                value={datos.opcion_Categoria}
+                                value={data.opcion_Categoria}
                                 required
                             >
                                 {categorias.map((categoria) => (
@@ -177,7 +178,7 @@ export default function Agregar() {
                                 className={styles.selcts}
                                 name="opcion_Unidad"
                                 onChange={handleInputChange}
-                                value={datos.opcion_Unidad}
+                                value={data.opcion_Unidad}
                                 required
                             >
                                 {unidadMedida.map((unidad) => (
@@ -197,7 +198,7 @@ export default function Agregar() {
                                 className={styles.selcts}
                                 name="opcion_Proveedor"
                                 onChange={handleInputChange}
-                                value={datos.opcion_Proveedor}
+                                value={data.opcion_Proveedor}
                                 required
                             >
                                 {proveedores.map((proveedor) => (
@@ -218,7 +219,7 @@ export default function Agregar() {
                                 className={styles.date}
                                 name="fecha_Vencimiento"
                                 onChange={handleInputChange}
-                                value={datos.fecha_Vencimiento}
+                                value={data.fecha_Vencimiento}
                                 required
                             />
                         </div>
@@ -238,11 +239,11 @@ export default function Agregar() {
                                 name="cantidad"
                                 min={0}
                                 onChange={handleInputChange}
-                                value={datos.cantidad}
+                                value={data.cantidad}
                                 required
                             />
                             {
-                                Number(datos.cantidad) < 0 && (
+                                Number(data.cantidad) < 0 && (
                                     <p className={styles.mensError}>Error el valor debe de ser Positivo</p>
                                 )
                             }
@@ -261,13 +262,13 @@ export default function Agregar() {
                                 name="precio"
                                 min={0}
                                 onChange={handleInputChange}
-                                value={datos.precio}
+                                value={data.precio}
                                 required
                             />
                             {
-                                datos.precio.value && isNaN(datos.precio.value) || datos.precio.value < 0 ? (
+                                Number(data.precio) < 0 &&  (
                                     <p className={styles.mensError}>Error el valor debe de ser Positivo</p>
-                                ) : null
+                                )
                             }
                         </div>
                     </section>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import styles from '@/styles/BuscarGeneral.module.css';
 
 class BuscarGeneral extends Component {
- constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       busqueda: '',
@@ -11,9 +12,9 @@ class BuscarGeneral extends Component {
       categorias: [],
       unidades: [],
     };
- }
+  }
 
- componentDidMount() {
+  componentDidMount() {
     // Mock API call
     setTimeout(() => {
       this.setState({
@@ -39,16 +40,16 @@ class BuscarGeneral extends Component {
         ],
       });
     }, 1000);
- }
+  }
 
- handleSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
- };
+  };
 
- render() {
+  render() {
     return (
-      <div>
+      <div className={styles.divBody}>
         <h1>Buscar General</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -76,7 +77,7 @@ class BuscarGeneral extends Component {
               <option value="">Seleccione un proveedor</option>
               {this.state.proveedores.map((proveedor) => (
                 <option key={proveedor.id} value={proveedor.id}>
-                 {proveedor.nombre}
+                  {proveedor.nombre}
                 </option>
               ))}
             </select>
@@ -90,7 +91,7 @@ class BuscarGeneral extends Component {
               <option value="">Seleccione un producto</option>
               {this.state.productos.map((producto) => (
                 <option key={producto.id} value={producto.id}>
-                 {producto.nombre}
+                  {producto.nombre}
                 </option>
               ))}
             </select>
@@ -104,7 +105,7 @@ class BuscarGeneral extends Component {
               <option value="">Seleccione una categoria</option>
               {this.state.categorias.map((categoria) => (
                 <option key={categoria.id} value={categoria.id}>
-                 {categoria.nombre}
+                  {categoria.nombre}
                 </option>
               ))}
             </select>
@@ -118,7 +119,7 @@ class BuscarGeneral extends Component {
               <option value="">Seleccione una unidad</option>
               {this.state.unidades.map((unidad) => (
                 <option key={unidad.id} value={unidad.id}>
-                 {unidad.nombre}
+                  {unidad.nombre}
                 </option>
               ))}
             </select>
@@ -127,7 +128,7 @@ class BuscarGeneral extends Component {
         </form>
       </div>
     );
- }
+  }
 }
 
 export default BuscarGeneral;
