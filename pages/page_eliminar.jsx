@@ -3,8 +3,12 @@ import Link from 'next/link';
 import styles from '@/styles/Eliminar.module.css';
 import Fecha from "@/Components/Utils/Fecha";
 import Hora from "@/Components/Utils/Hora";
+import {EliminarProducto} from "@/Components/Utils/EliminarProducto"
+
 
 export default function Eliminar() {
+
+
 
     return (
         <div className={styles.bodyAg}>
@@ -50,6 +54,8 @@ export default function Eliminar() {
 
                     <section className={styles.formMedio}>
                         <h1 className={styles.results}>Resultados de búsqueda</h1>
+
+                        <EliminarProducto/>
                     </section>
 
                     <section className={styles.formBajo}>
