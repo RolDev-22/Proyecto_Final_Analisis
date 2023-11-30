@@ -77,6 +77,9 @@ export default function Agregar() {
         event.target.reset();
     };
 
+
+
+
     return (
         <div className={styles.bodyAg}>
 

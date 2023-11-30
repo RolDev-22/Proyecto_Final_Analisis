@@ -28,30 +28,30 @@ export default function Main() {
                             Módulos
                         </span>
 
-                        <Link href="/main" className={styles.buttonCentro}>
+                        <Link href="/page_main" className={styles.buttonCentro}>
                             RECETAS
                         </Link>
 
-                        <Link href="/main" className={styles.buttonCentro}>
+                        <Link href="/page_main" className={styles.buttonCentro}>
                             PROVEEDORES
                         </Link>
 
-                        <Link href="/producto" className={styles.buttonCentro}>
+                        <Link href="/page_producto" className={styles.buttonCentro}>
                             PRODUCTOS                        </Link>
 
-                        <Link href="/main" className={styles.buttonCentro}>
+                        <Link href="/page_main" className={styles.buttonCentro}>
                             FACTURACIÓN
                         </Link>
 
-                        <Link href="/main" className={styles.buttonCentro}>
+                        <Link href="/page_main" className={styles.buttonCentro}>
                             COMPRA
                         </Link>
 
-                        <Link href="/main" className={styles.buttonCentro}>
+                        <Link href="/page_main" className={styles.buttonCentro}>
                             INVENTARIO
                         </Link>
 
-                        <Link href="/main" className={styles.buttonCentro}>
+                        <Link href="/page_main" className={styles.buttonCentro}>
                             REPORTES
                         </Link>
 
