@@ -3,35 +3,19 @@ import Link from 'next/link';
 import styles from '@/styles/Agregar.module.css';
 import Fecha from "@/Components/Utils/Fecha";
 import Hora from "@/Components/Utils/Hora";
-import { collection, addDoc, setDoc } from "firebase/firestore";
-import { db } from "@/firebase/ConectFirebase";
 import { datosCategoria, datosProveedor, datosUnidad } from '@/Components/Utils/TraerDatosFrirebase';
 import { AgregarProducto } from '@/Components/Utils/AgregarProducto';
+//import { addDoc, collection } from 'firebase/firestore';
+//import { db } from '@/firebase/ConectFirebase';
 
 export default function Agregar() {
 
     {/**Almacenar la categoría de la base */ }
-    const [categorias, setCategorias] = useState([
-        {
-            id: Number,
-            Categoria: String
-        }
-    ]);
+    const [categorias, setCategorias] = useState([]);
 
-    const [proveedores, setProveedores] = useState([
-        {
-            id: Number,
-            Nombre: String,
-        }
-    ]);
+    const [proveedores, setProveedores] = useState([]);
 
-    const [unidadMedida, setUnidadMedida] = useState([
-        {
-            id: Number,
-            Nombre: String,
-            Sigla: String
-        }
-    ]);
+    const [unidadMedida, setUnidadMedida] = useState([]);
 
     {/**Llamar los datos desde la base */ }
     useEffect(() => {
@@ -49,50 +33,47 @@ export default function Agregar() {
         fetchData();
     }, []);
 
-    {/**Insertar lo que se seleccione en el select de categorias */ }
-    const [opcionCategoria, setOpcionCategoria] = useState("1");
-    const handleChange1 = (event) => {
-        setOpcionCategoria(event.target.value);
+    const [datos, setDatos] = useState({
+        id_Producto: '',
+        nombre_Producto: '',
+        opcion_Categoria: '',
+        opcion_Unidad: '',
+        opcion_Proveedor: '',
+        fecha_Vencimiento: '',
+        cantidad: '',
+        precio: '',
+    });
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        console.log(name, value);
+        setDatos((prevProps) => ({
+            ...prevProps,
+            [name]: value
+        }));
     };
 
-    const [opcionProveedor, setOpcionProveedor] = useState("1");
-    const handleChange2 = (event) => {
-        setOpcionProveedor(event.target.value);
-    };
-
-    const [opcionUnidad, setOpcionUnidad] = useState("1");
-    const handleChange3 = (event) => {
-        setOpcionUnidad(event.target.value);
-    };
-
-    const [cantidadInput, setCantidadInput] = useState('');
-    const handleInputnumber1 = (event) => {
-        const inputValue = event.target.value;
-        setCantidadInput(inputValue);
-    };
-
-    //extracción del valor del precio
-    const [precioInput, setPrecioInput] = useState('');
-    const handleInputnumber2 = (event) => {
-        const inputValue = event.target.value;
-        setPrecioInput(inputValue);
-    };
-
-    const handleFormSubmit = (event) => {//prescionar el botón de enviar
+    const handleFormSubmit = async (event) => {//prescionar el botón de enviar
         event.preventDefault();
 
-        const [datos, setDatos] = useState({
-            id:'',
-            nombreProd:'',
-            categoria:'',
-            unidadMed:'',
-            nombreProv:'',
-            fechaVen:'',
-            cantidad:'',
-            precio:'',
-        });
+        try{
+            await AgregarProducto(datos);
+        }catch(error){
+            console.error('Error al agregar el producto: ', error);
+        }
+        //AGREGAR DATOS A FIREBASE EN "PRODUCTOS"
+        //DESCOMENTAR //import { addDoc, collection } from 'firebase/firestore';
+        //import { db } from '@/firebase/ConectFirebase';
 
-        
+
+        // try {
+        //     const productosRef = collection(db, 'Productos');
+        //     const docRef = await addDoc(productosRef, datos);
+        //     console.log('Producto añadido con ID: ', docRef.id);
+        // } catch (error) {
+        //     console.error('Error al agregar el producto: ', error);
+        // }
+
         event.target.reset();
     };
 
@@ -100,7 +81,7 @@ export default function Agregar() {
         <div className={styles.bodyAg}>
 
             <section className={styles.Bsuperior}>
-                <Link href={"/main"} className={styles.Shome}>
+                <Link href={"/page_main"} className={styles.Shome}>
 
                 </Link>
 
@@ -140,6 +121,7 @@ export default function Agregar() {
                                 placeholder='PD001'
                                 maxLength={5}
                                 onChange={handleInputChange}
+                                value={datos.id_Producto}
                                 required
                             />
                         </div>
@@ -155,6 +137,7 @@ export default function Agregar() {
                                 className={styles.textos}
                                 name="nombre_Producto"
                                 onChange={handleInputChange}
+                                value={datos.nombre_Producto}
                                 required
                             />
                         </div>
@@ -166,9 +149,9 @@ export default function Agregar() {
                             </label>
                             <select
                                 className={styles.selcts}
-                                name="opcionCategoria"
-                                value={opcionCategoria}
-                                onChange={handleChange1}
+                                name="opcion_Categoria"
+                                onChange={handleInputChange}
+                                value={datos.opcion_Categoria}
                                 required
                             >
                                 {categorias.map((categoria) => (
@@ -189,9 +172,9 @@ export default function Agregar() {
                             </label>
                             <select
                                 className={styles.selcts}
-                                name="opcionUnidad"
-                                value={opcionUnidad}
-                                onChange={handleChange3}
+                                name="opcion_Unidad"
+                                onChange={handleInputChange}
+                                value={datos.opcion_Unidad}
                                 required
                             >
                                 {unidadMedida.map((unidad) => (
@@ -209,9 +192,9 @@ export default function Agregar() {
                             </label>
                             <select
                                 className={styles.selcts}
-                                name="opcionProveedor"
-                                value={opcionProveedor}
-                                onChange={handleChange2}
+                                name="opcion_Proveedor"
+                                onChange={handleInputChange}
+                                value={datos.opcion_Proveedor}
                                 required
                             >
                                 {proveedores.map((proveedor) => (
@@ -231,6 +214,8 @@ export default function Agregar() {
                                 type='date'
                                 className={styles.date}
                                 name="fecha_Vencimiento"
+                                onChange={handleInputChange}
+                                value={datos.fecha_Vencimiento}
                                 required
                             />
                         </div>
@@ -249,13 +234,14 @@ export default function Agregar() {
                                 className={styles.number}
                                 name="cantidad"
                                 min={0}
-                                onChange={handleInputnumber1}
+                                onChange={handleInputChange}
+                                value={datos.cantidad}
                                 required
                             />
                             {
-                                cantidadInput && isNaN(cantidadInput) || cantidadInput < 0 ? (
+                                Number(datos.cantidad) < 0 && (
                                     <p className={styles.mensError}>Error el valor debe de ser Positivo</p>
-                                ) : null
+                                )
                             }
                         </div>
 
@@ -271,11 +257,12 @@ export default function Agregar() {
                                 placeholder='₡'
                                 name="precio"
                                 min={0}
-                                onChange={handleInputnumber2}
+                                onChange={handleInputChange}
+                                value={datos.precio}
                                 required
                             />
                             {
-                                precioInput && isNaN(precioInput) || precioInput < 0 ? (
+                                datos.precio.value && isNaN(datos.precio.value) || datos.precio.value < 0 ? (
                                     <p className={styles.mensError}>Error el valor debe de ser Positivo</p>
                                 ) : null
                             }

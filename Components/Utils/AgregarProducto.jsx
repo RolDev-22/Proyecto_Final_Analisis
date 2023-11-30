@@ -1,26 +1,26 @@
-import { getDocs, collection } from 'firebase/firestore';
-import { db } from '../../firebase/ConectFirebase';
+import { firestore } from 'firebase/firestore';
+import { useState } from 'react';
 
-async function AgregarProducto( dataObject ) {
-    const referenceCollection = db.getDocs()
+async function AgregarProducto({ dataObject }) {
 
-    addDoc(referenceCollection, {
+    const [infProducto, setInfProducto] = useState({
         id_Producto: dataObject.id_Producto,
         nombre_Producto: dataObject.nombre_Producto,
-        Categoria: dataObject.Categoria,
-        Unidad_Medida: dataObject.Unidad_Medida,
-        Nombre_Proveedor: dataObject.Nombre_Proveedor,
+        opcion_Categoria: dataObject.opcion_Categoria,
+        opcion_Unidad: dataObject.opcion_Unidad,
+        opcion_Proveedor: dataObject.opcion_Proveedor,
         fecha_Vencimiento: dataObject.fecha_Vencimiento,
-        cantida: dataObject.cantida,
-        precio: dataObject.precio,
-    })
-        .then((doc) => {
-            alert("Documento agregado con éxito con el ID:" + doc.id);
-        })
-        .catch((error) => {
-            alert("Error al agregar el documento:", error);
-        });
+        cantidad: dataObject.cantidad,
+        precio: dataObject.precio
+    });
 
+    try {
+        const productosRef = collection(db, 'Productos');
+        const docRef = await addDoc(productosRef, infProducto);
+        console.log('Producto añadido con ID: ', docRef.id);
+    } catch (error) {
+        console.error('Error al agregar el producto: ', error);
+    }
 }
 
 export { AgregarProducto };
