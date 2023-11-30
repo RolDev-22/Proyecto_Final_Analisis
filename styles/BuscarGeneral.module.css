@@ -32,16 +32,46 @@ font-family: 'Open Sans', sans-serif;
     border: 1px solid black;
     text-align: center;
     font-family: 'Tillana', cursive;
-    font-size: 30px;
-
+    font-size: 25px;
+    border-collapse: separate;
+    border-spacing: none;
+    padding: 5px;
 }
 
-.thTable{
-    padding: 15px;
-    border: 1px black;
+.theadStyle{
+    background-color: chocolate;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
-.tdTable{
-    padding: 50px;
-    border: 1px black;
+.tbodyStyle{
+   display: flex;
+   flex-direction: column;
+   border-collapse: separate;
+   border-spacing: 5px;
+   width: 100%;
+}
+
+.trStyle{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    column-gap: 20px;
+    padding: 10px;
+}
+
+.thStyle{
+    display: flex;
+    background-color: aqua;
+    width: 100%;
+    justify-content: center;
+}
+
+.tdStyle{
+    display: flex;
+    background-color: aqua;
+    width: 100%;
+    justify-content: center;
 }
