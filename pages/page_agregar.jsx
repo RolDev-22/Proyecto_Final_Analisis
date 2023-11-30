@@ -6,7 +6,7 @@ import Hora from "@/Components/Utils/Hora";
 import { collection, addDoc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase/ConectFirebase";
 import { datosCategoria, datosProveedor, datosUnidad } from '@/Components/Utils/TraerDatosFrirebase';
-import { ProductoNuevo } from '@/Components/Utils/ProductoNuevo';
+import { AgregarProducto } from '@/Components/Utils/AgregarProducto';
 
 export default function Agregar() {
 
@@ -80,37 +80,19 @@ export default function Agregar() {
 
     const handleFormSubmit = (event) => {//prescionar el botón de enviar
         event.preventDefault();
-        const { /**constante de datos que se extraeran */
-            Id_Producto,
-            Nombre_Producto,
-            Fecha_Vencimiento,
-            Cantidad,
-            Precio,
-        } = event.target;
-        /**Datos lamados por value directo no por target */
-        const Categoria = opcionCategoria;
-        const Unidad_Medida = opcionUnidad;
-        const Nombre_Proveedor = opcionProveedor;
 
-        const productosRef = collection(db, 'Productos');//obtenemos referencia de la colección de la base
-        addDoc(productosRef, {//procedemos a añadir el producto a la base
-            id_Producto: Id_Producto.value,
-            nombre_Producto: Nombre_Producto.value,
-            Categoria,
-            Unidad_Medida,
-            Nombre_Proveedor,
-            fecha_Vencimiento: Fecha_Vencimiento.value,
-            cantida: Cantidad.value,
-            precio: Precio.value,
-        })
-            .then((doc) => {
-                alert("Documento agregado con éxito con el ID:" + doc.id);
-            })
-            .catch((error) => {
-                alert("Error al agregar el documento:", error);
-            });
+        const [datos, setDatos] = useState({
+            id:'',
+            nombreProd:'',
+            categoria:'',
+            unidadMed:'',
+            nombreProv:'',
+            fechaVen:'',
+            cantidad:'',
+            precio:'',
+        });
 
-        // Limpiar los campos del formulario
+        
         event.target.reset();
     };
 
@@ -154,9 +136,10 @@ export default function Agregar() {
                                 autoComplete="off"
                                 type='text'
                                 className={styles.textos}
-                                name="Id_Producto"
+                                name="id_Producto"
                                 placeholder='PD001'
                                 maxLength={5}
+                                onChange={handleInputChange}
                                 required
                             />
                         </div>
@@ -170,7 +153,8 @@ export default function Agregar() {
                                 autoComplete="off"
                                 type='text'
                                 className={styles.textos}
-                                name="Nombre_Producto"
+                                name="nombre_Producto"
+                                onChange={handleInputChange}
                                 required
                             />
                         </div>
@@ -246,7 +230,7 @@ export default function Agregar() {
                             <input
                                 type='date'
                                 className={styles.date}
-                                name="Fecha_Vencimiento"
+                                name="fecha_Vencimiento"
                                 required
                             />
                         </div>
@@ -263,7 +247,7 @@ export default function Agregar() {
                                 autoComplete="off"
                                 type='number'
                                 className={styles.number}
-                                name="Cantidad"
+                                name="cantidad"
                                 min={0}
                                 onChange={handleInputnumber1}
                                 required
@@ -285,7 +269,7 @@ export default function Agregar() {
                                 type='number'
                                 className={styles.number}
                                 placeholder='₡'
-                                name="Precio"
+                                name="precio"
                                 min={0}
                                 onChange={handleInputnumber2}
                                 required

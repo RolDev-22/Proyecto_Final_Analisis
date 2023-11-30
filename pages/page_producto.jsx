@@ -14,29 +14,29 @@ export default function Producto() {
                     <Link className={styles.Buser} href={"/"}>
                     </Link>
 
-                    <Link className={styles.Bhome} href={"/main"}>
+                    <Link className={styles.Bhome} href={"/page_main"}>
                     </Link>
 
                 </section>
 
                 <section className={styles.Icentro}>
 
-                    <Link href={"/agregar"} className={styles.buttonCentro}>
+                    <Link href={"/page_agregar"} className={styles.buttonCentro}>
                         AGREGAR <br />
                         PRODUCTO
                     </Link>
 
-                    <Link href={"/modificar"} className={styles.buttonCentro}>
+                    <Link href={"/page_modificar"} className={styles.buttonCentro}>
                         MODIFICAR <br />
                         PRODUCTO
                     </Link>
 
-                    <Link href={"/buscar"} className={styles.buttonCentro}>
+                    <Link href={"/page_buscar"} className={styles.buttonCentro}>
                         BUSCAR <br />
                         PRODUCTO
                     </Link>
 
-                    <Link href={"/eliminar"} className={styles.buttonCentro}>
+                    <Link href={"/page_eliminar"} className={styles.buttonCentro}>
                         ELIMINAR <br />
                         PRODUCTO
                     </Link>
@@ -44,7 +44,7 @@ export default function Producto() {
                 </section>
 
                 <section className={styles.Iabajo}>
-                    <Link className={styles.Bvolver} href={"/main"}>
+                    <Link className={styles.Bvolver} href={"/page_main"}>
                     </Link>
                 </section>
 

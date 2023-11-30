@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from '@/styles/Buscar.module.css';
 import Fecha from "@/Components/Utils/Fecha";
 import Hora from "@/Components/Utils/Hora";
+import BuscarProducto from "@/Components/Utils/BuscarProducto";
 
 export default function Buscar() {
 
@@ -64,6 +65,7 @@ export default function Buscar() {
 
                     <section className={styles.formMedio}>
                         <h1 className={styles.results}>Resultados de búsqueda</h1>
+             
                     </section>
 
                     <section className={styles.formBajo}>
