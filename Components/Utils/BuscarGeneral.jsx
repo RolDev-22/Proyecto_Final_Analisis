@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from '@/styles/BuscarGeneral.module.css';
 
 class BuscarGeneral extends Component {
  constructor(props) {
@@ -49,8 +50,8 @@ class BuscarGeneral extends Component {
  render() {
     return (
       <div>
-        <h1>Buscar General</h1>
-        <form onSubmit={this.handleSubmit}>
+       
+        <form onSubmit={this.handleSubmit} >
           <label>
             Buscar:
             <input
@@ -61,7 +62,7 @@ class BuscarGeneral extends Component {
           </label>
           <label>
             Cantidad:
-            <input
+            <input 
               type="number"
               value={this.state.cantidad}
               onChange={(e) => this.setState({ cantidad: e.target.value })}
