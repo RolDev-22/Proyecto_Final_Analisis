@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Main() {
     return (
         <div className={styles.bodyM}>
-
+            <title>Pagina Principal SodaF</title>
             <div className={styles.arriba}>
                 <p className={styles.cambioDolar}>Tipo de cambio del dolar para el día {< Fecha />} Compra ₡535 Venta ₡520</p>
             </div>

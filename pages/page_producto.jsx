@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default function Producto() {
     return (
         <div className={styles.body}>
+            <title>Pagina De Producto</title>
 
             <div className={styles.izquierdo}>
 

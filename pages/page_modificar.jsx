@@ -10,7 +10,7 @@ export default function Modificar() {
         <div className={styles.bodyAg}>
 
             <section className={styles.Bsuperior}>
-                <Link href={"/main"} className={styles.Shome}>
+                <Link href={"/page_main"} className={styles.Shome}>
 
                 </Link>
 

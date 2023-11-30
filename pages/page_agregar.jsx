@@ -9,6 +9,7 @@ export default function Agregar() {
 
     return (
         <div className={styles.bodyAg}>
+            <title>Pagina De Agregar Producto</title>
 
             <section className={styles.Bsuperior}>
                 <Link href={"/page_main"} className={styles.Shome}>

@@ -8,9 +8,10 @@ export default function Eliminar() {
 
     return (
         <div className={styles.bodyAg}>
+            <title>Pagina De Eliminar Producto</title>
 
             <section className={styles.Bsuperior}>
-                <Link href={"/main"} className={styles.Shome}>
+                <Link href={"/page_main"} className={styles.Shome}>
 
                 </Link>
 

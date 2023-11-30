@@ -49,6 +49,7 @@ export default function LoguinForm() {
 
     return (
         <div className={styles.Fbody}>
+            <title>Pagina Login</title>
             <h1 className={styles.title}>Inicio Sesión</h1>
 
             <div className={styles.logo}>

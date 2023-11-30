@@ -3,16 +3,17 @@ import Link from 'next/link';
 import styles from '@/styles/Buscar.module.css';
 import Fecha from "@/Components/Utils/Fecha";
 import Hora from "@/Components/Utils/Hora";
-import BuscarGeneral from '@/Components/BuscarGeneral';
+import { BuscarGeneral } from '@/Components/BuscarGeneral';
 
 
 export default function Buscar() {
 
     return (
         <div className={styles.bodyAg}>
+             <title>Pagina De Buscar Producto</title>
 
             <section className={styles.Bsuperior}>
-                <Link href={"/main"} className={styles.Shome}>
+                <Link href={"/page_main"} className={styles.Shome}>
 
                 </Link>
 
@@ -66,9 +67,9 @@ export default function Buscar() {
 
                     <section className={styles.formMedio}>
                         <h1 className={styles.results}>Resultados de búsqueda</h1>
+
+                        <BuscarGeneral/>
                     </section>
-               
-                    <BuscarGeneral/>
                     
                     <section className={styles.formBajo}>
                         <button className={styles.boton}>Enviar</button>
