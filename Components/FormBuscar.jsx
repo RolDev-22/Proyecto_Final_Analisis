@@ -123,12 +123,12 @@ const FormBuscar = () => {
                                 <tbody className={styles.tbodyStyle}>
                                     {productos.map((producto) => (
                                         <tr className={styles.trStyle}>
-                                            <td className={styles.tdStyle}>{producto.id}</td>
-                                            <td className={styles.tdStyle}>{producto.nombre}</td>
-                                            <td className={styles.tdStyle}>{producto.id_proveedor}</td>
+                                            <td className={styles.tdStyle}>{producto.id_Producto}</td>
+                                            <td className={styles.tdStyle}>{producto.nombre_Producto}</td>
+                                            <td className={styles.tdStyle}>{producto.opcion_Proveedor}</td>
                                             <td className={styles.tdStyle}>{producto.cantidad}</td>
-                                            <td className={styles.tdStyle}>{producto.unidad}</td>
-                                            <td className={styles.tdStyle}>{producto.categoria}</td>
+                                            <td className={styles.tdStyle}>{producto.opcion_Unidad}</td>
+                                            <td className={styles.tdStyle}>{producto.opcion_Categoria}</td>
                                         </tr>
                                     ))}
                                 </tbody>
