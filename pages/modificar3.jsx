@@ -1,11 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '@/styles/Buscar.module.css';
+import styles from '@/styles/Modificar.module.css';
 import Fecha from "@/Components/Utils/Fecha";
 import Hora from "@/Components/Utils/Hora";
 
-
-export default function Buscar() {
+export default function Modificar() {
 
     return (
         <div className={styles.bodyAg}>
@@ -17,7 +16,7 @@ export default function Buscar() {
 
                 <section className={styles.Btitulo}>
                     <label className={styles.Title}>
-                        Buscar Producto
+                        Modificar Producto
                     </label>
 
                     <label className={styles.Fecha}>
@@ -34,7 +33,6 @@ export default function Buscar() {
                 </Link>
             </section>
 
-
             <section className={styles.Binferior}>
 
                 <form className={styles.formMu}>
@@ -46,26 +44,10 @@ export default function Buscar() {
                             <input type="button" value="" className={styles.butSearch} />
                         </div>
 
-                        <div className={styles.container1}>
-                            <input type="checkbox" id="miCheckbox" className={styles.check} />
-                            <label for="miCheckbox"></label>
-                            <p className={styles.listGen}>Listado General</p>
-                        </div>
-
-                        <div className={styles.container2}>
-                            <p className={styles.filtText}>Filtro por Categoría</p>
-                            <select className={styles.selectCat}>
-                                <option value="">Seleccionar</option>
-                                <option value="opcion1">Categoria 1</option>
-                                <option value="opcion2">Categoria 2</option>
-                                <option value="opcion3">Categoria 3</option>
-                            </select>
-                        </div>
                     </section>
 
                     <section className={styles.formMedio}>
                         <h1 className={styles.results}>Resultados de búsqueda</h1>
-             
                     </section>
 
                     <section className={styles.formBajo}>
@@ -75,7 +57,6 @@ export default function Buscar() {
                 </form>
             </section>
 
-
-        </div >
+        </div>
     )
 }

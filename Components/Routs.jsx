@@ -18,7 +18,8 @@ const Routes = () => {
           <Route path="/page_modificar" component={Modificar} />
           <Route path="/page_buscar" component={Buscar} />
           <Route path="/page_eliminar" component={Eliminar} />
-        <Route component={() => <Redirect to="/" />} />
+          <Route path="*" component={Main} />
+          <Route component={() => <Redirect to="/" />} />
       </Routes>
     </Router>
   );

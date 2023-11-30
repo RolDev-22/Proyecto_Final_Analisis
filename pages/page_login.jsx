@@ -41,7 +41,7 @@ export default function LoguinForm() {
             setStatus(true);
             localStorage.setItem('status', status);
             console.log(status);
-            router.push('/main');
+            router.push('/page_main');
         } else {
             alert("Usuario o contraseña erronea");
         }
@@ -66,7 +66,7 @@ export default function LoguinForm() {
                             autoComplete="off"
                             placeholder="Ingrese su usuario"
                             name="user"
-                            required="true"
+                            required={true}
                             value={user}
                             onChange={handleUserChange}
                         />
