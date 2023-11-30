@@ -90,7 +90,7 @@ export default function LoguinForm() {
                             autoComplete="off"
                             placeholder="Ingrese su contraseña"
                             name="password"
-                            required="true"
+                            required={true}
                             value={password}
                             onChange={handlePasswordChange}
                         />

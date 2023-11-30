@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '@/styles/Buscar.module.css';
 import Fecha from "@/Components/Utils/Fecha";
 import Hora from "@/Components/Utils/Hora";
-import BuscarGeneral from '@/Components/Utils/BuscarGeneral';
+import BuscarGeneral from '@/Components/BuscarGeneral';
 
 
 export default function Buscar() {
