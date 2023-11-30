@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { datosCategoria, datosProveedor, datosUnidad } from '@/Components/Utils/TraerDatosFrirebase';
-import { AgregarProducto } from '@/Components/AgregarProducto';
+import { AgregarProducto } from '@/Components/Utils/AgregarProducto';
 import styles from '@/styles/FormAgregar.module.css';
 
 const FormAgregar = () => {

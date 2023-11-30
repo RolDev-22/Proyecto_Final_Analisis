@@ -24,14 +24,14 @@ async function datosProductos() {
   const querySnapshot = await getDocs(collection(db, 'Productos'));
   const datos = querySnapshot.docs.map((doc) => ({
     id: doc.id,
-    nombre: doc.data().nombre_Producto,
-    nombre_proveedor: doc.data().Nombre_Proveedor,
-    categoria: doc.data().Categoria,
-    cantidad: doc.data().cantida,
-    unidad_medida: doc.data().Unidad_Medida,
+    id_Producto: doc.data().id_Producto,
+    nombre_Producto: doc.data().nombre_Producto,
+    opcion_Proveedor: doc.data().opcion_Proveedor,
+    opcion_Categoria: doc.data().opcion_Categoria,
+    cantidad: doc.data().cantidad,
+    opcion_Unidad: doc.data().opcion_Unidad,
     precio: doc.data().precio,
-    fecha_venc: doc.data().fecha_Vencimiento,
-    
+    fecha_Vencimiento: doc.data().fecha_Vencimiento,
   }));
   return datos;
 }

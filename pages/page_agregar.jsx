@@ -36,7 +36,7 @@ export default function Agregar() {
             </section>
 
             <section className={styles.Binferior}>
-               < FormAgregar />
+               <FormAgregar />
             </section >
 
         </div >
