@@ -49,7 +49,7 @@ class BuscarGeneral extends Component {
 
   render() {
     return (
-      <div className={styles.divBody}>
+      <div>
         <h1>Buscar General</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -62,7 +62,7 @@ class BuscarGeneral extends Component {
           </label>
           <label>
             Cantidad:
-            <input
+            <input 
               type="number"
               value={this.state.cantidad}
               onChange={(e) => this.setState({ cantidad: e.target.value })}
